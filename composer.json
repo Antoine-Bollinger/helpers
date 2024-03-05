@@ -1,0 +1,21 @@
+{
+    "name": "abollinger/helpers",
+    "description": "A set of useful functions for managing the Partez framework, but not only!",
+    "type": "library",
+    "require": {
+        "symfony/yaml": "^6.4",
+        "erusev/parsedown": "^1.7"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Abollinger\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Antoine Bollinger",
+            "email": "antoine.bollinger@gmail.com"
+        }
+    ]
+}
