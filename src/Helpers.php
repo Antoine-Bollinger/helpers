@@ -15,8 +15,8 @@ final class Helpers
     /**
      * Function that clean an array of parameters using the htmlspecialchars functions, to avoid the risk of XSS attacks.
      * 
-     * @param $arr      The array that is to be cleaned.
-     * @return $result  The cleaned array. Returns false if @param is not an array.
+     * @param array $arr	The array that is to be cleaned.
+     * @return array 		The cleaned array. Returns false if @param is not an array.
      */
     public static function cleanArray(
 		$arr
@@ -66,8 +66,9 @@ final class Helpers
 	/**
 	 * Function that create an array of default value that will be replace by the client value when exist
 	 * 
-	 * @param $default 	an array of default values that are necessary but not mandatory on client side
-	 * @return $params	an array of paramters with the values sended by the client and, when not provided, the default value set in the $default by the developper
+	 * @param array $default 	an array of default values that are necessary but not mandatory on client side
+	 * @param array $params 	an array of parameters mandatories that will be filled with the default values
+	 * @return array			the array $params filled with default values
 	 */
 	public static function defaultParams(
 		$default = [], 
@@ -105,7 +106,7 @@ final class Helpers
 	 * 
 	 * @param string $dir 		Directory to scan
 	 * @param string $rootDir	Root of the directory. Initially $dir = $rootDir, but in the loop $dir will change
-	 * @return array $allData	Array of all detailles path/files. Not nested.
+	 * @return array			Array of all detailles path/files. Not nested.
 	 */
 	public static function getScan(
 		$dir, 

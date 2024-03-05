@@ -14,8 +14,8 @@ final class RouteReader
     /**
      * Retrieves routes from YAML files present in the specified directory.
      *
-     * @param string $dir The directory containing YAML route files
-     * @return array An array of parsed routes from YAML files
+     * @param string $dir   The directory containing YAML route files
+     * @return array        An array of parsed routes from YAML files
      */
     public function getRoutesFromYaml(
         $dir = ""
@@ -42,9 +42,8 @@ final class RouteReader
     /**
      * Retrieves routes from PHP controller files within the specified directory.
      *
-     * @param string $directory The directory path containing PHP controller files.
-     *
-     * @return array An array containing extracted routes with their path, name, and controller information.
+     * @param string $directory     The directory path containing PHP controller files.
+    * @return array                 An array containing extracted routes with their path, name, and controller information.
      */
     public function getRoutesFromDirectory(
         $directory,
