@@ -9,7 +9,7 @@ use \Symfony\Component\Yaml\Yaml;
  * This class is responsible for extracting routes from controller classes
  * located within a specified directory.
  */
-final class RouteReader extends Abstract\Bootstrap
+final class RouteReader
 {
     /**
      * Retrieves routes from YAML files present in the specified directory.

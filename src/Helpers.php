@@ -10,7 +10,7 @@ use \Symfony\Component\Yaml\Yaml;
  * Some functions that can be used in the app as Helpers
  * Feel free to create your own functions !
  */
-final class Helpers extends Abstract\Bootstrap
+final class Helpers
 {
     /**
      * Function that clean an array of parameters using the htmlspecialchars functions, to avoid the risk of XSS attacks.
