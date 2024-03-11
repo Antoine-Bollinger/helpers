@@ -193,6 +193,8 @@ final class Helpers
 		$appRoot = "",
 		$documentRoot = ""
 	) :string {
+		$appRoot = str_replace("\\", "/", $appRoot);
+		$documentRoot = str_replace("\\", "/", $documentRoot);
 		return (strlen($appRoot) > strlen($documentRoot)) ? str_replace($documentRoot, "", $appRoot) : "";
 	}
 
