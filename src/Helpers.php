@@ -111,7 +111,7 @@ final class Helpers
 		$dir, 
 		$rootDir, 
 		$allData = array()
-	) : array {
+	) :array {
 		$invisibleFileNames = array(".", "..");
 		$dirContent = scandir($dir);
 		foreach ($dirContent as $key => $content) {
@@ -161,12 +161,12 @@ final class Helpers
 	/**
 	 * Defines constants from an associative array if they are not already defined.
 	 *
-	 * @param array $arr An associative array containing constant names as keys and their respective values.
-	 * @return bool Returns true if constants are defined or if the input is not an array. Returns false otherwise.
+	 * @param array $arr 	An associative array containing constant names as keys and their respective values.
+	 * @return bool 		Returns true if constants are defined or if the input is not an array. Returns false otherwise.
 	 */
 	public static function defineConstants(
 		$arr = []
-	) {
+	) :bool {
 		if (!is_array($arr)) return false;
 		foreach ($arr as $key => $value) {
 			if (!defined($key)) {
@@ -175,4 +175,25 @@ final class Helpers
 		}
 		return true;
 	}
+
+	/**
+	 * Retrieves the subdirectory path of an application relative to the document root.
+	 *
+	 * This function compares the lengths of the provided application root path and document root path.
+	 * If the application root path is longer than the document root path, it calculates and returns
+	 * the subdirectory path by replacing the document root from the application root.
+	 *
+	 * @param string $appRoot       The path to the application's root directory.
+	 * @param string $documentRoot  The path to the document root directory.
+	 *
+	 * @return string              The subdirectory path or an empty string if the document root is longer
+	 *                             than or equal to the application root.
+	 */
+	public static function getAppSubdirectory(
+		$appRoot = "",
+		$documentRoot = ""
+	) :string {
+		return (strlen($appRoot) > strlen($documentRoot)) ? str_replace($documentRoot, "", $appRoot) : "";
+	}
+
 }
