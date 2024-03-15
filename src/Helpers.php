@@ -198,4 +198,20 @@ final class Helpers
 		return (strlen($appRoot) > strlen($documentRoot)) ? str_replace($documentRoot, "", $appRoot) : "";
 	}
 
+	/**
+	 * Get the complete host URL of the current application.
+	 *
+	 * This function constructs the complete host URL of the current application,
+	 * including the protocol (http:// or https://) and the host name.
+	 *
+	 * @return string The complete host URL of the current application.
+	 */
+	public static function getAppCompleteHost(
+
+	) :string {
+		$is_https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
+		$protocol = $is_https ? 'https://' : 'http://';
+		$host = $_SERVER['HTTP_HOST'] ?? "";
+		return $protocol . $host;
+	}
 }
