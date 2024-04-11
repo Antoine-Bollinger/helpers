@@ -57,6 +57,22 @@ Function that clean an array of parameters using the htmlspecialchars functions,
 * ```@param array $arr```: The array that is to be cleaned.
 * ```@return array```: The cleaned array. Returns false if @param is not an array.
 
+Example : 
+```
+$myArray = Helpers::cleanArray([
+    "attack" => "<script>alert('Hey, I'm trying to hack you!')</script>"
+]);
+
+echo var_dump($myArray);
+
+// output:
+
+array(1) {
+    ["attack"]=>
+    string(66) "&lt;script&gt;alert('Hey, I'm trying to hack you!')&lt;/script&gt;"
+}
+```
+
 ### printArray
 
 Render PHP array into a HTML ul list
