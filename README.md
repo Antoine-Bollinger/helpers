@@ -40,12 +40,6 @@ Here are all the function you can, showd in the Classes tree they belong to:
                         <li><a href="#erusev/parsedown">extends the erusev/parsedown library</a></li>
                     </ul>
                 </li>
-                <li>RouteReader::
-                    <ul>
-                        <li><a href="#getRoutesFromYaml">getRoutesFromYaml($dir)</a></li>
-                        <li><a href="#getRoutesFromDirectory">getRoutesFromDirectory($dir)</a></li>
-                    </ul>
-                </li>
             </ul>
         </li>
     </ul>    
