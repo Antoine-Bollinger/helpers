@@ -18,7 +18,7 @@ final class Helpers
      * @return array 		The cleaned array. Returns false if @param is not an array.
      */
     public static function cleanArray(
-		$arr
+		array $arr
 	) :array {
 		if (!is_array($arr)) return false;
 		$result = [];
@@ -40,8 +40,8 @@ final class Helpers
 	 * @return string 			Default return is an empty string, else it's a HTML ul list of the array
 	 */
     public static function printArray(
-		$arr,
-		$classes = []
+		array $arr,
+		array $classes = []
 	) :string {
 		if (!is_array($arr)) return "";
 		static $closingTag = array();
@@ -70,8 +70,8 @@ final class Helpers
 	 * @return array			the array $params filled with default values
 	 */
 	public static function defaultParams(
-		$default = [], 
-		$params = []
+		array $default = [], 
+		array $params = []
 	) :array {
 
 		foreach ($default as $k => $v) {
@@ -91,7 +91,7 @@ final class Helpers
 	 * @return array 			Return a PHP array of the YAML file content
 	 */
 	public static function getYaml(
-		$filePath = ""
+		string $filePath = ""
 	) :array {
 		try {
 			return Yaml::parseFile($filePath);
@@ -108,9 +108,9 @@ final class Helpers
 	 * @return array			Array of all detailles path/files. Not nested.
 	 */
 	public static function getScan(
-		$dir, 
-		$rootDir, 
-		$allData = array()
+		string $dir, 
+		string $rootDir, 
+		array $allData = []
 	) :array {
 		$invisibleFileNames = array(".", "..");
 		$dirContent = scandir($dir);
@@ -134,7 +134,7 @@ final class Helpers
      * @return bool         True if the array is associative, false otherwise.
      */
     public static function isAssociativeArray(
-        $arr = []
+        array $arr = []
     ) :bool {
 		if (!is_array($arr)) return false;
         return count(array_filter(array_keys($arr), 'is_string')) > 0;
@@ -147,7 +147,7 @@ final class Helpers
      * @return int          The max lenght   
      */
     public static function largestElementInArray(
-        $arr = []
+        array $arr = []
     ) :int {
 		if (!is_array($arr)) return 0;
         $max = 0;
@@ -165,7 +165,7 @@ final class Helpers
 	 * @return bool 		Returns true if constants are defined or if the input is not an array. Returns false otherwise.
 	 */
 	public static function defineConstants(
-		$arr = []
+		array $arr = []
 	) :bool {
 		if (!is_array($arr)) return false;
 		foreach ($arr as $key => $value) {
@@ -190,8 +190,8 @@ final class Helpers
 	 *                             than or equal to the application root.
 	 */
 	public static function getAppSubdirectory(
-		$appRoot = "",
-		$documentRoot = ""
+		string $appRoot = "",
+		string $documentRoot = ""
 	) :string {
 		$appRoot = str_replace("\\", "/", $appRoot);
 		$documentRoot = str_replace("\\", "/", $documentRoot);

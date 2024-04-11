@@ -180,7 +180,9 @@ Abollinger/
 │   ├── getScan($dir, $rootDir, $allData)
 │   ├── isAssociativeArray($array)
 │   ├── largestElementInArray($array)
-│   └── defineConstants($array)
+│   ├── defineConstants($array)
+│   ├── getAppSubdirectory($appRoot, $documentRoot)
+│   └── getAppCompleteHost()
 └── Parsedown::
     └── extends the erusev/parsedown library
 ```
