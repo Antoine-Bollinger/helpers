@@ -33,6 +33,8 @@ Here are all the function you can, showd in the Classes tree they belong to:
                         <li><a href="#isassociativearray">isAssociativeArray($array)</a></li>
                         <li><a href="#largestelementinarray">largestElementInArray($array)</a></li>
                         <li><a href="#defineconstants">defineConstants($array)</a></li>
+                        <li><a href="#getAppSubdirectory">getAppSubdirectory($appRoot, $documentRoot)</a></li>
+                        <li><a href="#getAppCompleteHost">getAppCompleteHost()</a></li>
                     </ul>
                 </li>
                 <li>Parsedown::
@@ -70,9 +72,9 @@ array(1) {
 ### printArray
 
 Render PHP array into a HTML ul list
-* ```@param array $arr```: The array to render as a list
-* ```@param array $classes```: A array of classes to apply to the ul/li. Expecting ["ul" => "classForTheUlTag", "li" => "classForTheLiTag"]
-* ```@return string```: Default return is an empty string, else it's a HTML ul list of the array
+* ```@param array $arr```: The array to render as a list.
+* ```@param array $classes```: A array of classes to apply to the ul/li. Expecting ["ul" => "classForTheUlTag", "li" => "classForTheLiTag"].
+* ```@return string```: Default return is an empty string, else it's a HTML ul list of the array.
 
 Example : 
 ```
@@ -95,9 +97,9 @@ echo $myArray;
 
 Function that create an array of default value that will be replace by the client value when exist
 * 
-* ```@param array $default```: an array of default values that are necessary but not mandatory on client side
-* ```@param array $params```: an array of parameters mandatories that will be filled with the default values
-* ```@return array```: the array $params filled with default values
+* ```@param array $default```: an array of default values that are necessary but not mandatory on client side.
+* ```@param array $params```: an array of parameters mandatories that will be filled with the default values.
+* ```@return array```: the array $params filled with default values.
 
 Example:
 ```
@@ -122,14 +124,14 @@ array(2) {
 ### getYaml
 
 Yaml files reader returning the content as a array. Base on Symfony/Yaml package.
-* ```@param string $filePath```: The path to the YAML file
-* ```@return array```: Return a PHP array of the YAML file content
+* ```@param string $filePath```: The path to the YAML file.
+* ```@return array```: Return a PHP array of the YAML file content.
 
 ### getScan
 
 Scan a directory and return an array of all paths. Escape the .class.php files.
-* ```@param string $dir```:	Directory to scan
-* ```@param string $rootDir```: Root of the directory. Initially $dir = $rootDir, but in the loop $dir will change
+* ```@param string $dir```:	Directory to scan.
+* ```@param string $rootDir```: Root of the directory. Initially $dir = $rootDir, but in the loop $dir will change.
 * ```@return array```: Array of all detailles path/files. Not nested.
 
 ### isAssociativeArray
@@ -141,8 +143,8 @@ Function that evaluate if an array is Associative (ex.: ["key1" => "value1", "ke
 ### largestElementInArray
 
 Function that determine the max lenght among elements of an array
-* ```@param array $arr```: An array to be evaluated
-* ```@return int```: The max lenght
+* ```@param array $arr```: An array to be evaluated.
+* ```@return int```: The max lenght.
 
 ### defineConstants
 
@@ -150,21 +152,21 @@ Defines constants from an associative array if they are not already defined.
 * ```@param array $arr```: An associative array containing constant names as keys and their respective values.
 * ```@return bool```: Returns true if constants are defined or if the input is not an array. Returns false otherwise.
 
+### getAppSubdirectory
+
+Function that returns the subdirectory path of an application relative to the document root.
+* ```@param string $appRoot```: The path to the application's root directory.
+* ```@param string $documentRoot```: The path to the document root directory.
+* ```@return string```: The subdirectory path or an empty string if the document root is longer than or equal to the application root.
+
+### getAppCompleteHost
+
+This function returns the complete host URL of the current application.
+* ```@return string```: The complete host URL of the current application.
+
 ### Parsedown
 
 Extends the [erusev/parsedown](https://github.com/erusev/parsedown) library by adding # in the title, so the anchor links can work.
-
-### getRoutesFromYaml
-
-Retrieves routes from YAML files present in the specified directory.
-* ```@param string $dir```: The directory containing YAML route files
-* ```@return array```: An array of parsed routes from YAML files
-
-### getRoutesFromDirectory
-
-Retrieves routes from PHP controller files within the specified directory.
-* ```@param string $directory```: The directory path containing PHP controller files.
-* ```@return array```: An array containing extracted routes with their path, name, and controller information.
 
 ## Classes tree
 
