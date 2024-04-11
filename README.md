@@ -80,6 +80,23 @@ Render PHP array into a HTML ul list
 * ```@param array $classes```: A array of classes to apply to the ul/li. Expecting ["ul" => "classForTheUlTag", "li" => "classForTheLiTag"]
 * ```@return string```: Default return is an empty string, else it's a HTML ul list of the array
 
+Example : 
+```
+$myArray = Helpers::printArray([
+    "firstName" => "Antoine",
+    "lastName" => "Bollinger"
+]);
+
+echo $myArray;
+
+// output:
+
+<ul>
+    <li>firstName => <strong>Antoine</strong></li>
+    <li>lastName => <strong>Bollinger</strong></li>
+</ul>
+```
+
 ### defaultParams
 
 Function that create an array of default value that will be replace by the client value when exist
@@ -87,6 +104,26 @@ Function that create an array of default value that will be replace by the clien
 * ```@param array $default```: an array of default values that are necessary but not mandatory on client side
 * ```@param array $params```: an array of parameters mandatories that will be filled with the default values
 * ```@return array```: the array $params filled with default values
+
+Example:
+```
+$params = [
+    "firstName" => "Victor"
+];
+
+$test = Abollinger\Helpers::defaultParams([
+    "firstName" => "Antoine",
+    "lastName" => "Bollinger"
+], $params);
+
+echo var_dump($test);
+
+// output:
+array(2) {
+    ["firstName"] => string(6) "Victor"
+    ["lastName"] => string(9) "Bollinger"
+}
+```
 
 ### getYaml
 
