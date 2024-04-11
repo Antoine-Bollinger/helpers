@@ -185,9 +185,6 @@ Abollinger/
 │   ├── isAssociativeArray($array)
 │   ├── largestElementInArray($array)
 │   └── defineConstants($array)
-├── Parsedown::
-│   └── extends the erusev/parsedown library
-└── RouteReader::
-    ├── getRoutesFromYaml($dir)
-    └── getRoutesFromDirectory($dir)
+└── Parsedown::
+    └── extends the erusev/parsedown library
 ```
