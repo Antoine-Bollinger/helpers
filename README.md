@@ -2,7 +2,6 @@
 
 Provides some usefull PHP functions to help developpers in their daily work.
 
-
 [![Total Downloads](https://img.shields.io/packagist/dt/abollinger/helpers)](https://packagist.org/packages/abollinger/helpers)
 [![Latest Stable Version](https://img.shields.io/packagist/v/abollinger/helpers)](https://packagist.org/packages/abollinger/helpers)
 [![License](https://img.shields.io/packagist/l/abollinger/helpers)](https://packagist.org/packages/abollinger/helpers)
