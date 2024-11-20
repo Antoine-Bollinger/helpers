@@ -190,3 +190,14 @@ Abollinger/
 └── Parsedown::
     └── extends the erusev/parsedown library
 ```
+
+## Licence 
+
+This library is licensed under the MIT License. For full license details, see the `LICENCE` file distributed with this source code.
+
+## Author
+
+Antoine Bollinger
+Email: abollinger@partez.net
+
+For contributions, issues, or feedback, feel free to contact the author or open a GitHub issue.

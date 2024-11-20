@@ -2,7 +2,7 @@
 /*
  * This file is part of the Abollinger\Helpers package.
  *
- * (c) Antoine Bollinger <antoine.bollinger@gmail.com>
+ * (c) Antoine Bollinger <abollinger@partez.net>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
