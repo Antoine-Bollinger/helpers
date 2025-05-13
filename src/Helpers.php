@@ -223,4 +223,24 @@ final class Helpers
 		$host = $_SERVER['HTTP_HOST'] ?? "";
 		return $protocol . $host;
 	}
+
+    /**
+     * Converts a route pattern with placeholders into a regular expression.
+     *
+     * This function takes a route string containing placeholders in curly braces (e.g., "/user/{id}/profile")
+     * and converts it into a regex pattern that can be used for matching and extracting named parameters.
+     *
+     * For example:
+     *   Input: "/user/{id}/profile"
+     *   Output: "#^/user/(?P<id>[^/]+)/profile$#"
+     *
+     * @param string $route  The route pattern containing optional placeholders wrapped in curly braces.
+     * @return string        The resulting regex pattern with named capture groups.
+     */
+	public static function convertRouteToRegex(
+		string $route = ""
+	) :string {
+		$regex = preg_replace("#\{(\w+)\}#", "(?P<$1>[^/]+)", $route);
+		return "#^" . $regex . "$#";
+	}
 }

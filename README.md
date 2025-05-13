@@ -39,6 +39,7 @@ Here are all the function you can, showd in the Classes tree they belong to:
                         <li><a href="#defineconstants">defineConstants($array)</a></li>
                         <li><a href="#getAppSubdirectory">getAppSubdirectory($appRoot, $documentRoot)</a></li>
                         <li><a href="#getAppCompleteHost">getAppCompleteHost()</a></li>
+                        <li><a href="#convertRouteToRegex">convertRouteToRegex()</a></li>
                     </ul>
                 </li>
                 <li>Parsedown::
@@ -167,6 +168,14 @@ Function that returns the subdirectory path of an application relative to the do
 
 This function returns the complete host URL of the current application.
 * ```@return string```: The complete host URL of the current application.
+
+### convertRouteToRegex
+
+This function takes a route string containing placeholders in curly braces (e.g., "/user/{id}/profile")
+and converts it into a regex pattern that can be used for matching and extracting named parameters.
+For example:
+* Input: "/user/{id}/profile"
+* Output: "#^/user/(?P<id>[^/]+)/profile$#"
 
 ### Parsedown
 
