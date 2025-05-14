@@ -31,6 +31,7 @@ Here are all the function you can, showd in the Classes tree they belong to:
                     <ul>
                         <li><a href="#cleanarray">cleanArray($array)</a></li>
                         <li><a href="#printarray">printArray($array, $classes)</a></li>
+                        <li><a href="#mapJoinArray">mapJoinArray($array, $callback, $separator)</a></li>
                         <li><a href="#defaultparams">defaultParams($default, $array)</a></li>
                         <li><a href="#getyaml">getYaml($filePath)</a></li>
                         <li><a href="#getscan">getScan($dir, $rootDir, $allData)</a></li>
@@ -97,6 +98,15 @@ echo $myArray;
     <li>lastName => <strong>Bollinger</strong></li>
 </ul>
 ```
+
+### mapJoinArray
+
+Function that applies a callback to each key-value pair in the array and joins the results into a string.
+
+* ```@param array $arr```: The input array whose elements will be transformed.
+* ```@param callable $callback```: A function with signature function($key, $value): string
+* ```@param string $separator```: A string to insert between each transformed element.
+* ```@return string```: A single string composed of transformed elements separated by the given separator.
 
 ### defaultParams
 

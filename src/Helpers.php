@@ -72,6 +72,24 @@ final class Helpers
 	}
 
 	/**
+	 * Applies a callback to each key-value pair in the array and joins the results into a string.
+	 *
+	 * The callback must accept two arguments: (string|int $key, mixed $value) and return a string.
+	 *
+	 * @param array $arr 			The input array whose elements will be transformed.
+	 * @param callable $callback 	A function with signature function($key, $value): string
+	 * @param string $separator 	A string to insert between each transformed element.
+	 * @return string 				A single string composed of transformed elements separated by the given separator.
+	 */
+	public static function mapJoinArray(
+		array $arr, 
+		callable $callback, 
+		string $separator = ""
+	) : string {
+		return implode($separator, array_map($callback, array_keys($arr), array_values($arr))); 
+	}
+
+	/**
 	 * Function that create an array of default value that will be replace by the client value when exist
 	 * 
 	 * @param array $default 	an array of default values that are necessary but not mandatory on client side
